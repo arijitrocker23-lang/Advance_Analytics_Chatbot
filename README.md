@@ -61,3 +61,24 @@ hosting is required.
 ## Architecture
 
 The application is split into 15 Python files organised into five layers:
+
++------------------------------------------------------------------+
+| USER INTERFACE LAYER |
+| app.py (entry point) + ui_components.py (rendering) |
+| Sidebar | Configuration Panel | Chat Interface |
++------------------------------------------------------------------+
+| ORCHESTRATION LAYER |
+| analyzer.py (coordinator) + conversation.py (context) |
++------------------------------------------------------------------+
+| ANALYSIS PIPELINE |
+| planner.py --> executor.py --> explainer.py |
++------------------------------------------------------------------+
+| SUPPORT MODULES |
+| bedrock_client.py | chart_engine.py | utils.py | data_loader.py |
++------------------------------------------------------------------+
+| KNOWLEDGE LAYER |
+| few_shot.py (examples + meta-prompts) | knowledge_base.py |
++------------------------------------------------------------------+
+| DATA STRUCTURES |
+| data_models.py | config.py |
++------------------------------------------------------------------+
